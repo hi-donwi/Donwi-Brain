@@ -1,4 +1,4 @@
-module github.com/hi-donwi/Agent-Brain
+module github.com/hi-donwi/Donwi-Brain
 
 go 1.26.0
 

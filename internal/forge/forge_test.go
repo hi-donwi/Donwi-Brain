@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/skills"
-	"github.com/hi-donwi/Agent-Brain/internal/trace"
+	"github.com/hi-donwi/Donwi-Brain/internal/skills"
+	"github.com/hi-donwi/Donwi-Brain/internal/trace"
 	"gopkg.in/yaml.v3"
 )
 

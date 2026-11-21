@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	localmcp "github.com/hi-donwi/Agent-Brain/internal/mcp"
+	localmcp "github.com/hi-donwi/Donwi-Brain/internal/mcp"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
 

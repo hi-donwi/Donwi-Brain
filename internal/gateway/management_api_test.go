@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
 func TestManagementAPIAddsRedactedAccountAndSupportsLifecycle(t *testing.T) {

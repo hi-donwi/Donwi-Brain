@@ -9,7 +9,7 @@
 A skill is a reusable procedure an agent follows for one kind of task. The open Agent
 Skills format (a folder with `SKILL.md`: YAML frontmatter with `name` and `description`,
 a Markdown body, optional `references/` and scripts) is already read by several coding
-agents, and the sibling repository hi-donwi/Agent-Skills publishes a catalog in it.
+agents, and the sibling repository hi-donwi/Donwi-Skills publishes a catalog in it.
 
 Local models have small effective context windows (Ollama loads 4096 tokens by default,
 see ADR-0002). Putting every skill body into the prompt does not fit, and a long system

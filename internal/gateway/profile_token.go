@@ -12,7 +12,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
 const inferenceTokenVersion = "bpi1"

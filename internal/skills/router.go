@@ -7,7 +7,7 @@ import (
 	"sync"
 	"unicode"
 
-	"github.com/hi-donwi/Agent-Brain/internal/store"
+	"github.com/hi-donwi/Donwi-Brain/internal/store"
 )
 
 // Embedder generates vector embeddings for a string.

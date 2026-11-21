@@ -12,11 +12,11 @@ import (
 	"syscall"
 
 	"github.com/google/jsonschema-go/jsonschema"
-	"github.com/hi-donwi/Agent-Brain/internal/agent"
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/codeintel"
-	"github.com/hi-donwi/Agent-Brain/internal/rag"
-	"github.com/hi-donwi/Agent-Brain/internal/skills"
+	"github.com/hi-donwi/Donwi-Brain/internal/agent"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/codeintel"
+	"github.com/hi-donwi/Donwi-Brain/internal/rag"
+	"github.com/hi-donwi/Donwi-Brain/internal/skills"
 	sdk "github.com/modelcontextprotocol/go-sdk/mcp"
 )
 

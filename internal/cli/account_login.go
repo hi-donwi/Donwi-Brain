@@ -14,8 +14,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/hi-donwi/Agent-Brain/internal/oauthbridge"
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/oauthbridge"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 	"github.com/spf13/cobra"
 )
 

@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/hi-donwi/Agent-Brain/internal/agent"
+	"github.com/hi-donwi/Donwi-Brain/internal/agent"
 	"github.com/spf13/cobra"
 )
 

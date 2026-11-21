@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/gateway"
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/gateway"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
 func TestResponsesPinsAccountAndPreservesPayload(t *testing.T) {

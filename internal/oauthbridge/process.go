@@ -16,7 +16,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 	"gopkg.in/yaml.v3"
 )
 

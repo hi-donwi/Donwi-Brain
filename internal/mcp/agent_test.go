@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/agent"
+	"github.com/hi-donwi/Donwi-Brain/internal/agent"
 	protocol "github.com/modelcontextprotocol/go-sdk/mcp"
 )
 

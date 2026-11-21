@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
 func TestOpenCodeLaunchUsesExplicitProviderAndScopedCredential(t *testing.T) {

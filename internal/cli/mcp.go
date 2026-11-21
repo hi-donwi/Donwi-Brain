@@ -5,14 +5,14 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/hi-donwi/Agent-Brain/internal/agent"
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/buildinfo"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
-	localmcp "github.com/hi-donwi/Agent-Brain/internal/mcp"
-	"github.com/hi-donwi/Agent-Brain/internal/rag"
-	"github.com/hi-donwi/Agent-Brain/internal/skills"
-	"github.com/hi-donwi/Agent-Brain/internal/store"
+	"github.com/hi-donwi/Donwi-Brain/internal/agent"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/buildinfo"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
+	localmcp "github.com/hi-donwi/Donwi-Brain/internal/mcp"
+	"github.com/hi-donwi/Donwi-Brain/internal/rag"
+	"github.com/hi-donwi/Donwi-Brain/internal/skills"
+	"github.com/hi-donwi/Donwi-Brain/internal/store"
 	"github.com/spf13/cobra"
 )
 

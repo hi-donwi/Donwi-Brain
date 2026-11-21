@@ -9,7 +9,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/hi-donwi/Agent-Brain/internal/trace"
+	"github.com/hi-donwi/Donwi-Brain/internal/trace"
 )
 
 // Miner clusters traces into recurring operational patterns.

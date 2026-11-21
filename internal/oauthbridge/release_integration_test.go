@@ -10,7 +10,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
 // Run with BRAIN_BRIDGE_TEST_ARCHIVE pointing to the official pinned release archive.

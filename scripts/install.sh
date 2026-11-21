@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # lokal universal installation script
-# https://github.com/hi-donwi/Agent-Brain
+# https://github.com/hi-donwi/Donwi-Brain
 
 set -e
 
@@ -49,7 +49,7 @@ if [ -z "$INSTALL_DIR" ]; then
 fi
 
 TARGET_FILE="$INSTALL_DIR/$BINARY"
-RELEASE_URL="https://github.com/hi-donwi/Agent-Brain/releases/latest/download/lokal-${OS}-${ARCH}${EXT}"
+RELEASE_URL="https://github.com/hi-donwi/Donwi-Brain/releases/latest/download/lokal-${OS}-${ARCH}${EXT}"
 
 echo "Installing lokal for ${OS}/${ARCH} into ${INSTALL_DIR}..."
 

@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/oauthbridge"
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/oauthbridge"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
 const maxActiveManagementLogins = 4

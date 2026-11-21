@@ -9,9 +9,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/gateway"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/gateway"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
 	"gopkg.in/yaml.v3"
 )
 

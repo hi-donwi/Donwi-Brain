@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"text/tabwriter"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/evalrunner"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/evalrunner"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
 	"github.com/spf13/cobra"
 )
 
