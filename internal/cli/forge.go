@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"text/tabwriter"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/forge"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
-	"github.com/hi-donwi/Agent-Brain/internal/trace"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/forge"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/trace"
 	"github.com/spf13/cobra"
 )
 

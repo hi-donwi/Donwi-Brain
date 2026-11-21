@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/skills"
+	"github.com/hi-donwi/Donwi-Brain/internal/skills"
 	"gopkg.in/yaml.v3"
 )
 

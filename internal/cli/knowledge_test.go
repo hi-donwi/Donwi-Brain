@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/cli"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/cli"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
 )
 
 func TestKnowledgeSourceAddStoresCanonicalRootInPrivateConfig(t *testing.T) {

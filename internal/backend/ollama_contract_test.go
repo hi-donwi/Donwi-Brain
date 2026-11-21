@@ -8,7 +8,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
 )
 
 func TestOllamaToolReplayAndStreamCompleteness(t *testing.T) {

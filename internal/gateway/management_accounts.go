@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/oauthbridge"
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/oauthbridge"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
 var errNativeSessionNeedsCLI = errors.New("native account login and verification require the official local CLI")

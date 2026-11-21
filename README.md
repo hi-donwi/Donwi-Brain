@@ -1,6 +1,6 @@
-# Agent-Brain
+# DONWI Brain
 
-Agent-Brain (`brain`) connects coding clients to local inference engines and cloud
+DONWI Brain (`brain`) connects coding clients to local inference engines and cloud
 AI services. It combines provider-aware account routing with local RAG, repository
 intelligence, read-only MCP tools, traces, evaluation, and a skill forge.
 
@@ -14,8 +14,8 @@ selected account. Native CLI login remains separate from API billing.
 Requires Go 1.26 or newer. Native coding clients are installed separately.
 
 ```sh
-git clone https://github.com/hi-donwi/Agent-Brain.git
-cd Agent-Brain
+git clone https://github.com/hi-donwi/Donwi-Brain.git
+cd Donwi-Brain
 make build
 ./bin/brain version
 ```
@@ -174,7 +174,7 @@ live account state when it can authenticate to that gateway and labels a
 configuration snapshot otherwise. Listings and HTTP account metadata omit keys,
 secret references, management credentials, and custom header values.
 
-Agent-Control Settings embeds Brain's origin-bound management console. It can inspect
+DONWI Desk Settings embeds Brain's origin-bound management console. It can inspect
 configured backends/models, select existing backends and installed hardware profiles,
 and explicitly pull/unload/remove catalog models on supported Ollama runtimes. It does not
 install or launch system services, and no management endpoint executes arbitrary CLI
@@ -194,7 +194,7 @@ imports, and MCP process/tool execution remain scoped to the local CLI/stdio MCP
 
 Trace UI shows only aggregate statistics with Brain-keyed session aliases. The sole evaluation
 surface is a fixed synthetic local Ollama smoke test; raw traces, custom eval specs and model
-outputs are not sent to Agent-Control. See [ADR-0020](docs/adr/0020-safe-trace-inventory-and-local-smoke-evaluation.md).
+outputs are not sent to DONWI Desk. See [ADR-0020](docs/adr/0020-safe-trace-inventory-and-local-smoke-evaluation.md).
 
 Forge inventory/evaluation/promotion uses opaque candidate aliases in Settings. Full candidate
 content/provenance review stays local (`brain skills review-candidate`); the UI can promote only
@@ -206,7 +206,7 @@ remains local CLI-owned. See [ADR-0022](docs/adr/0022-redacted-service-status-an
 
 The credential command requires a configured `routing_profiles.agent-control` profile.
 It writes a profile-scoped token and revision manifest under the private runtime home;
-never copy `serve.token` into Agent-Control.
+never copy `serve.token` into DONWI Desk.
 
 [Account guide](docs/accounts.md) · [Gateway contracts](docs/gateway-api.md) ·
 [Provider accounts decision](docs/adr/0011-provider-accounts-and-cli-boundaries.md) ·

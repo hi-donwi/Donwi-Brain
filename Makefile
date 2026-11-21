@@ -1,7 +1,7 @@
 .PHONY: build install test race vet fmt fmt-check tidy-check cross static-check vulncheck smoke check clean release
 
 BINARY  := brain
-PKG     := github.com/hi-donwi/Agent-Brain
+PKG     := github.com/hi-donwi/Donwi-Brain
 VERSION ?= 0.0.0-dev
 COMMIT  ?= $(shell git rev-parse --short=12 HEAD 2>/dev/null || echo unknown)
 DATE    ?= $(shell date -u +%Y-%m-%dT%H:%M:%SZ)

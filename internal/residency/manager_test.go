@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/residency"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/residency"
 )
 
 type mockResidencyAdapter struct {

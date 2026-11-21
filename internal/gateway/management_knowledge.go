@@ -12,10 +12,10 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/hi-donwi/Agent-Brain/internal/catalog"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
-	"github.com/hi-donwi/Agent-Brain/internal/rag"
-	"github.com/hi-donwi/Agent-Brain/internal/store"
+	"github.com/hi-donwi/Donwi-Brain/internal/catalog"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/rag"
+	"github.com/hi-donwi/Donwi-Brain/internal/store"
 )
 
 const (

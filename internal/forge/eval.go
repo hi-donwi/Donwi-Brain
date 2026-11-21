@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/skills"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/skills"
 )
 
 // Evaluator benchmarks candidate skills against test fixtures.

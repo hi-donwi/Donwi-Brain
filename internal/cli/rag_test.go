@@ -8,9 +8,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/cli"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/cli"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
 )
 
 type fakeCliAdapter struct{}

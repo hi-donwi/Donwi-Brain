@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hi-donwi/Agent-Brain/internal/doctor"
+	"github.com/hi-donwi/Donwi-Brain/internal/doctor"
 	"github.com/spf13/cobra"
 )
 

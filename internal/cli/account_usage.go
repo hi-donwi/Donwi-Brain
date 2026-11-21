@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/codexusage"
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/codexusage"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 	"github.com/spf13/cobra"
 )
 

@@ -11,14 +11,14 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/buildinfo"
-	"github.com/hi-donwi/Agent-Brain/internal/catalog"
-	"github.com/hi-donwi/Agent-Brain/internal/gateway"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
-	"github.com/hi-donwi/Agent-Brain/internal/oauthbridge"
-	"github.com/hi-donwi/Agent-Brain/internal/router"
-	"github.com/hi-donwi/Agent-Brain/internal/trace"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/buildinfo"
+	"github.com/hi-donwi/Donwi-Brain/internal/catalog"
+	"github.com/hi-donwi/Donwi-Brain/internal/gateway"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/oauthbridge"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/trace"
 	"github.com/spf13/cobra"
 )
 

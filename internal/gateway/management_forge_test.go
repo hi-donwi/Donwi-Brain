@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/forge"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/forge"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
 	"gopkg.in/yaml.v3"
 )
 

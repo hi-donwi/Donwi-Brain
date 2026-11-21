@@ -7,11 +7,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	localmcp "github.com/hi-donwi/Agent-Brain/internal/mcp"
-	"github.com/hi-donwi/Agent-Brain/internal/rag"
-	"github.com/hi-donwi/Agent-Brain/internal/skills"
-	"github.com/hi-donwi/Agent-Brain/internal/store"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	localmcp "github.com/hi-donwi/Donwi-Brain/internal/mcp"
+	"github.com/hi-donwi/Donwi-Brain/internal/rag"
+	"github.com/hi-donwi/Donwi-Brain/internal/skills"
+	"github.com/hi-donwi/Donwi-Brain/internal/store"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
 

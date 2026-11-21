@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/home"
-	"github.com/hi-donwi/Agent-Brain/internal/trace"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/trace"
 )
 
 func TestTracesCmd_ListEmptyAndPopulated(t *testing.T) {

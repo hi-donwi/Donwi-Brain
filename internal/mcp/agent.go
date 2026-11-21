@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	"github.com/google/jsonschema-go/jsonschema"
-	"github.com/hi-donwi/Agent-Brain/internal/agent"
+	"github.com/hi-donwi/Donwi-Brain/internal/agent"
 	sdk "github.com/modelcontextprotocol/go-sdk/mcp"
 )
 

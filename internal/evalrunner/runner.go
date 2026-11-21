@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/catalog"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/catalog"
 )
 
 // AssertionResult records the outcome of a single assertion check.

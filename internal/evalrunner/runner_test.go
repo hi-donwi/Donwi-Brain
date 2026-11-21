@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
 )
 
 type mockEvalAdapter struct {

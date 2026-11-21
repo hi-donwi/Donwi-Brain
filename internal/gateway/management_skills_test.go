@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
 )
 
 func mustJSON(value string) string {

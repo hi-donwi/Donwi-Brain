@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
 func TestRouterStatusDoesNotIgnoreInvalidAccountConfig(t *testing.T) {

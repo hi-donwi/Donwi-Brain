@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/rag"
-	"github.com/hi-donwi/Agent-Brain/internal/store"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/rag"
+	"github.com/hi-donwi/Donwi-Brain/internal/store"
 )
 
 type fakeRagAdapter struct {

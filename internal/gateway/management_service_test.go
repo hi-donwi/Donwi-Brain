@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/service"
+	"github.com/hi-donwi/Donwi-Brain/internal/service"
 )
 
 func TestManagementServiceStatusRedactsUnitPathAndRawMessage(t *testing.T) {

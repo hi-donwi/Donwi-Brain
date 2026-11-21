@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
 func TestManagementTokenIsDomainSeparatedAndBoundToMaster(t *testing.T) {

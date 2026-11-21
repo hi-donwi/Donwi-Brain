@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/catalog"
-	"github.com/hi-donwi/Agent-Brain/internal/doctor"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
-	"github.com/hi-donwi/Agent-Brain/internal/hw"
-	"github.com/hi-donwi/Agent-Brain/internal/setup"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/catalog"
+	"github.com/hi-donwi/Donwi-Brain/internal/doctor"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/hw"
+	"github.com/hi-donwi/Donwi-Brain/internal/setup"
 	"github.com/spf13/cobra"
 )
 

@@ -7,7 +7,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/hi-donwi/Agent-Brain/internal/rag"
+	"github.com/hi-donwi/Donwi-Brain/internal/rag"
 )
 
 // FileSymbols aggregates symbols found in one source file.

@@ -3,8 +3,8 @@ package gateway
 import (
 	"strings"
 
-	"github.com/hi-donwi/Agent-Brain/internal/catalog"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/catalog"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
 )
 
 // ResolvedTarget holds model routing resolution and fallback candidates.

@@ -8,10 +8,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/hi-donwi/Agent-Brain/internal/forge"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
-	localmcp "github.com/hi-donwi/Agent-Brain/internal/mcp"
-	"github.com/hi-donwi/Agent-Brain/internal/skills"
+	"github.com/hi-donwi/Donwi-Brain/internal/forge"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
+	localmcp "github.com/hi-donwi/Donwi-Brain/internal/mcp"
+	"github.com/hi-donwi/Donwi-Brain/internal/skills"
 )
 
 type managementSkill struct {

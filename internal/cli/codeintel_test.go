@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/codeintel"
+	"github.com/hi-donwi/Donwi-Brain/internal/codeintel"
 )
 
 func TestCodeIntelCLI(t *testing.T) {

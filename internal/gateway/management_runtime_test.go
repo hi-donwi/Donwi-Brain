@@ -11,11 +11,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/catalog"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
-	"github.com/hi-donwi/Agent-Brain/internal/hw"
-	"github.com/hi-donwi/Agent-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/catalog"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/hw"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
 type runtimeTestAdapter struct {

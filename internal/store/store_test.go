@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/store"
+	"github.com/hi-donwi/Donwi-Brain/internal/store"
 )
 
 func TestStore_CollectionsAndDocuments_Lifecycle(t *testing.T) {

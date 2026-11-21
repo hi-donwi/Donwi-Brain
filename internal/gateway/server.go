@@ -15,14 +15,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/hi-donwi/Agent-Brain/internal/backend"
-	"github.com/hi-donwi/Agent-Brain/internal/catalog"
-	"github.com/hi-donwi/Agent-Brain/internal/home"
-	"github.com/hi-donwi/Agent-Brain/internal/hw"
-	"github.com/hi-donwi/Agent-Brain/internal/residency"
-	"github.com/hi-donwi/Agent-Brain/internal/router"
-	"github.com/hi-donwi/Agent-Brain/internal/service"
-	"github.com/hi-donwi/Agent-Brain/internal/trace"
+	"github.com/hi-donwi/Donwi-Brain/internal/backend"
+	"github.com/hi-donwi/Donwi-Brain/internal/catalog"
+	"github.com/hi-donwi/Donwi-Brain/internal/home"
+	"github.com/hi-donwi/Donwi-Brain/internal/hw"
+	"github.com/hi-donwi/Donwi-Brain/internal/residency"
+	"github.com/hi-donwi/Donwi-Brain/internal/router"
+	"github.com/hi-donwi/Donwi-Brain/internal/service"
+	"github.com/hi-donwi/Donwi-Brain/internal/trace"
 )
 
 // DefaultPort is the default TCP port for lokal serve.

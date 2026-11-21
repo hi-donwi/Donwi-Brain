@@ -3,8 +3,8 @@ package catalog_test
 import (
 	"testing"
 
-	"github.com/hi-donwi/Agent-Brain/internal/catalog"
-	"github.com/hi-donwi/Agent-Brain/internal/hw"
+	"github.com/hi-donwi/Donwi-Brain/internal/catalog"
+	"github.com/hi-donwi/Donwi-Brain/internal/hw"
 )
 
 func TestDefault(t *testing.T) {
