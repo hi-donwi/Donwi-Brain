@@ -24,12 +24,25 @@ or launchd agent on macOS. The service ensures the gateway starts on boot.`,
 }
 
 func newServiceInstallCmd() *cobra.Command {
-	return &cobra.Command{
+	var cloudOnly, localOnly bool
+	cmd := &cobra.Command{
 		Use:   "install",
 		Short: "Install and start the background gateway service",
-		Args:  cobra.NoArgs,
+		Long: `Install and start the background gateway service. The service runs "serve";
+--cloud-only or --local-only is passed on to it, as with "serve" itself.`,
+		Args: cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, _ []string) error {
-			res, err := service.Install(service.Options{})
+			if cloudOnly && localOnly {
+				return fmt.Errorf("cannot combine --cloud-only and --local-only")
+			}
+			args := []string{"serve"}
+			if cloudOnly {
+				args = append(args, "--cloud-only")
+			}
+			if localOnly {
+				args = append(args, "--local-only")
+			}
+			res, err := service.Install(service.Options{Args: args})
 			if err != nil {
 				return err
 			}
@@ -37,6 +50,9 @@ func newServiceInstallCmd() *cobra.Command {
 			return nil
 		},
 	}
+	cmd.Flags().BoolVar(&cloudOnly, "cloud-only", false, "Run the service with serve --cloud-only (provider accounts, no local inference backend)")
+	cmd.Flags().BoolVar(&localOnly, "local-only", false, "Run the service with serve --local-only (configured local backend, no cloud accounts)")
+	return cmd
 }
 
 func newServiceUninstallCmd() *cobra.Command {
