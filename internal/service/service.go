@@ -1,13 +1,16 @@
 package service
 
 import (
+	"bytes"
 	"encoding/json"
+	"encoding/xml"
 	"fmt"
 	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"strings"
 	"time"
 )
 
@@ -21,9 +24,10 @@ const (
 
 // Options specifies target environment and binary paths for service lifecycle.
 type Options struct {
-	GOOS       string
-	ExecPath   string
-	UserHome   string
+	GOOS     string
+	ExecPath string
+	UserHome string
+	// Args follow the executable in the unit; the default is ["serve"].
 	Args       []string
 	CommandRun func(name string, args ...string) error
 }
@@ -104,24 +108,32 @@ func GenerateUnitContent(opts Options) (string, error) {
 
 	switch opts.GOOS {
 	case "linux":
+		command := make([]string, 0, len(opts.Args)+1)
+		for _, arg := range append([]string{opts.ExecPath}, opts.Args...) {
+			command = append(command, systemdExecArg(arg))
+		}
 		content := fmt.Sprintf(`[Unit]
 Description=Lokal AI Gateway Service
 After=network.target
 
 [Service]
 Type=simple
-ExecStart=%s serve
+ExecStart=%s
 Restart=always
 RestartSec=3
 
 [Install]
 WantedBy=default.target
-`, opts.ExecPath)
+`, strings.Join(command, " "))
 		return content, nil
 
 	case "darwin":
 		logDir := filepath.Join(opts.UserHome, ".lokal", "logs")
-		logFile := filepath.Join(logDir, "serve.log")
+		logFile := xmlText(filepath.Join(logDir, "serve.log"))
+		var programArguments strings.Builder
+		for _, arg := range append([]string{opts.ExecPath}, opts.Args...) {
+			fmt.Fprintf(&programArguments, "        <string>%s</string>\n", xmlText(arg))
+		}
 		content := fmt.Sprintf(`<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -130,9 +142,7 @@ WantedBy=default.target
     <string>%s</string>
     <key>ProgramArguments</key>
     <array>
-        <string>%s</string>
-        <string>serve</string>
-    </array>
+%s    </array>
     <key>RunAtLoad</key>
     <true/>
     <key>KeepAlive</key>
@@ -143,12 +153,29 @@ WantedBy=default.target
     <string>%s</string>
 </dict>
 </plist>
-`, LaunchdLabel, opts.ExecPath, logFile, logFile)
+`, LaunchdLabel, programArguments.String(), logFile, logFile)
 		return content, nil
 
 	default:
 		return "", fmt.Errorf("unsupported platform: %s", opts.GOOS)
 	}
+}
+
+// systemdExecArg quotes one ExecStart word: "%" and "$" are specifier and variable
+// characters, and a word with whitespace, quotes, backslashes or ";" is double-quoted.
+func systemdExecArg(arg string) string {
+	arg = strings.NewReplacer("%", "%%", "$", "$$").Replace(arg)
+	if arg != "" && !strings.ContainsAny(arg, " \t\n\"'\\;") {
+		return arg
+	}
+	return `"` + strings.NewReplacer(`\`, `\\`, `"`, `\"`, "\n", `\n`).Replace(arg) + `"`
+}
+
+// xmlText escapes text for a plist <string> element.
+func xmlText(text string) string {
+	var buf bytes.Buffer
+	_ = xml.EscapeText(&buf, []byte(text))
+	return buf.String()
 }
 
 // Install writes service configuration and registers it with the operating system init system.

@@ -43,3 +43,29 @@ func TestServiceStatus_Help(t *testing.T) {
 		t.Errorf("expected subcommands in help output:\n%s", helpText)
 	}
 }
+
+func TestServiceInstall_ServeModeFlags(t *testing.T) {
+	root := cli.NewRootCmd()
+	install, _, err := root.Find([]string{"service", "install"})
+	if err != nil {
+		t.Fatalf("service install not found: %v", err)
+	}
+	for _, name := range []string{"cloud-only", "local-only"} {
+		if install.Flags().Lookup(name) == nil {
+			t.Errorf("service install has no --%s flag", name)
+		}
+	}
+}
+
+func TestServiceInstall_RejectsBothServeModes(t *testing.T) {
+	root := cli.NewRootCmd()
+	var out bytes.Buffer
+	root.SetOut(&out)
+	root.SetErr(&out)
+	root.SetArgs([]string{"service", "install", "--cloud-only", "--local-only"})
+
+	err := root.Execute()
+	if err == nil || !strings.Contains(err.Error(), "cannot combine --cloud-only and --local-only") {
+		t.Fatalf("expected the combined modes to be refused, got %v", err)
+	}
+}

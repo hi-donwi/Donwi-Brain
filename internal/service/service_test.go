@@ -136,3 +136,64 @@ func TestService_InstallAndUninstall(t *testing.T) {
 		t.Errorf("expected unit file to be deleted, got err: %v", err)
 	}
 }
+
+func TestService_GenerateContentUsesServeArguments(t *testing.T) {
+	tempHome := t.TempDir()
+	args := []string{"serve", "--cloud-only"}
+
+	contentLinux, err := service.GenerateUnitContent(service.Options{
+		GOOS:     "linux",
+		ExecPath: "/usr/local/bin/brain",
+		UserHome: tempHome,
+		Args:     args,
+	})
+	if err != nil {
+		t.Fatalf("generate linux content failed: %v", err)
+	}
+	if !strings.Contains(contentLinux, "ExecStart=/usr/local/bin/brain serve --cloud-only\n") {
+		t.Errorf("linux unit does not run serve --cloud-only:\n%s", contentLinux)
+	}
+
+	contentDarwin, err := service.GenerateUnitContent(service.Options{
+		GOOS:     "darwin",
+		ExecPath: "/opt/homebrew/bin/brain",
+		UserHome: tempHome,
+		Args:     args,
+	})
+	if err != nil {
+		t.Fatalf("generate darwin content failed: %v", err)
+	}
+	want := "<string>/opt/homebrew/bin/brain</string>\n        <string>serve</string>\n        <string>--cloud-only</string>\n    </array>"
+	if !strings.Contains(contentDarwin, want) {
+		t.Errorf("darwin plist does not run serve --cloud-only:\n%s", contentDarwin)
+	}
+}
+
+func TestService_GenerateContentEscapesPathsAndArguments(t *testing.T) {
+	tempHome := t.TempDir()
+
+	contentLinux, err := service.GenerateUnitContent(service.Options{
+		GOOS:     "linux",
+		ExecPath: "/opt/my tools/brain",
+		UserHome: tempHome,
+		Args:     []string{"serve", `--profile=50%"x\`},
+	})
+	if err != nil {
+		t.Fatalf("generate linux content failed: %v", err)
+	}
+	if !strings.Contains(contentLinux, `ExecStart="/opt/my tools/brain" serve "--profile=50%%\"x\\"`+"\n") {
+		t.Errorf("linux unit does not quote the path and argument:\n%s", contentLinux)
+	}
+
+	contentDarwin, err := service.GenerateUnitContent(service.Options{
+		GOOS:     "darwin",
+		ExecPath: "/Applications/R&D <tools>/brain",
+		UserHome: tempHome,
+	})
+	if err != nil {
+		t.Fatalf("generate darwin content failed: %v", err)
+	}
+	if !strings.Contains(contentDarwin, "<string>/Applications/R&amp;D &lt;tools&gt;/brain</string>") {
+		t.Errorf("darwin plist does not escape the executable path:\n%s", contentDarwin)
+	}
+}

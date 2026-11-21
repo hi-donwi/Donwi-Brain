@@ -50,7 +50,9 @@ lokal doctor
 lokal service install
 ```
 
-The service will start automatically and persist across reboots.
+The service will start automatically and persist across reboots. It runs `serve`; add
+`--cloud-only` (provider accounts, no local inference backend) or `--local-only` to
+`service install` to run it in that mode.
 
 ### Step 1.2: Retrieve the Bearer Token
 
