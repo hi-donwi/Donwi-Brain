@@ -19,7 +19,7 @@ const inferenceTokenVersion = "bpi1"
 
 var profileRevisionPattern = regexp.MustCompile(`^sha256:[a-f0-9]{64}$`)
 
-// InferenceScope is the authorization carried by an Agent-Control inference credential.
+// InferenceScope is the authorization carried by a DONWI Desk inference credential.
 type InferenceScope struct {
 	ProfileID string   `json:"profile_id"`
 	Revision  string   `json:"revision"`

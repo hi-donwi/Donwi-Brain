@@ -38,5 +38,5 @@ implemented and tested in the milestone named in the [roadmap](ROADMAP.md).
 
 ## Supply chain
 
-Every push runs govulncheck and the Agent-Secure gate (gitleaks and osv-scanner at pinned,
+Every push runs govulncheck and the DONWI Secure gate (gitleaks and osv-scanner at pinned,
 checksum-verified versions). GitHub Actions are pinned by commit SHA.

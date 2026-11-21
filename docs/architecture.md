@@ -8,7 +8,7 @@ This page describes the target design for v1. What exists today is listed in the
 ```
   agent hosts                                 lokal (local AI platform)
   +------------------------------+            +--------------------------------------------+
-  | Agent-Control (agent host +  |  OpenAI    | serve: roles, fallbacks, residency, queue, |
+  | DONWI Desk (agent host +  |  OpenAI    | serve: roles, fallbacks, residency, queue, |
   | web console), Claude Code,   | ---------> |        token guard, token counting         |
   | opencode, Aider, Continue,   |            |                                            |
   | Cline, scripts               |  MCP       | mcp:   retrieval, code knowledge, skills   |
@@ -37,7 +37,7 @@ knowledge, and skills good enough for them, and learns from what they do.
 | Learn | `lokal forge`, `lokal skills promote` | Turn repeated successful work into tested skill candidates; promote by hand | M7 |
 
 `lokal mcp` exposes knowledge search and skills to other agents (Claude Code, opencode,
-Cursor, Agent-Control), so a cloud model can still use local knowledge and skills.
+Cursor, DONWI Desk), so a cloud model can still use local knowledge and skills.
 
 ## Deployment shapes
 
@@ -51,7 +51,7 @@ lokal supports two shapes with the same binary and the same defaults.
 ```
   laptop                                         dedicated VM (headless Linux)
   +------------------------+   SSH tunnel or     +-------------------------------+
-  | Agent-Control, editor, |   WireGuard overlay | lokal serve  (127.0.0.1)      |
+  | DONWI Desk, editor, |   WireGuard overlay | lokal serve  (127.0.0.1)      |
   | Claude Code, scripts   | ------------------> | lokal mcp    (stdio over SSH) |
   +------------------------+                     | Ollama / llama-server / vLLM  |
                                                  | lokal home: index, traces     |
@@ -167,9 +167,9 @@ how many tokens a prompt takes for a role before they send it.
 | Knowledge about code | Repo map, symbols, code search, project commands and instructions | MCP, read-only |
 | Procedures | Skills and the router | MCP `list_skills`, `get_skill` |
 | Knowing which local model can do the job | Pass rates per model and profile | `lokal eval` reports |
-| Getting better over time | Skills learned from its own traces | Trace import, forge, Agent-Skills export |
+| Getting better over time | Skills learned from its own traces | Trace import, forge, DONWI Skills export |
 
-Agent-Control reaches a lokal gateway on a VM through an SSH tunnel, so the endpoint is a
+DONWI Desk reaches a lokal gateway on a VM through an SSH tunnel, so the endpoint is a
 loopback URL and counts as `local` under its egress rules; an overlay or LAN address would
 count as `remote` and need a per-project allowlist entry. A split deployment also works:
 `lokal mcp` and `lokal index` on the workstation where the files are, `lokal serve` on the
@@ -182,7 +182,7 @@ backend is the VM's gateway, reached through the same tunnel.
 gateway capture ----+
 agent-host sessions -+--> traces --> mine (repeated, successful) --> draft candidate
 eval runs ----------+         --> evaluate with/without (lokal eval) --> harden
-                              --> human promote --> skills/ --> Agent-Skills --> every agent host
+                              --> human promote --> skills/ --> DONWI Skills --> every agent host
 ```
 
 Candidates carry provenance and an evaluation report and are invisible to the router

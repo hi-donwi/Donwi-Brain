@@ -10,7 +10,7 @@ In this deployment topology:
 1. The **Remote VM** runs the inference engine (Ollama, llama-server, vLLM) and `lokal serve`.
    The gateway binds strictly to `127.0.0.1:52140` behind per-process bearer authentication
    (ADR-0006, ADR-0009).
-2. The **Workstation / Laptop** runs developer tools (Agent-Control, Claude Code, opencode,
+2. The **Workstation / Laptop** runs developer tools (DONWI Desk, Claude Code, opencode,
    editors, scripts) and optionally a lightweight `lokal` instance for local MCP retrieval.
 3. An **SSH Tunnel** forwards the remote loopback port to your local machine, creating a secure,
    encrypted bridge without exposing any ports to the public internet or local network.
@@ -20,7 +20,7 @@ In this deployment topology:
 | Local Workstation (Mac / Linux)   |             | Dedicated Remote VM (Linux / GPU)  |
 |                                   |             |                                    |
 | +-------------------------------+ |  SSH Tunnel | +--------------------------------+ |
-| | Agent-Control / Claude Code / | |   (Port     | | lokal serve                    | |
+| | DONWI Desk / Claude Code / | |   (Port     | | lokal serve                    | |
 | | Editors / lokal CLI           | |  52140)     | | (Bound to 127.0.0.1:52140)     | |
 | |                               | | ----------> | |                                | |
 | | http://127.0.0.1:52140/v1     | |             | | Bearer Token in serve.token    | |
@@ -136,13 +136,13 @@ models are verified.
 Because the SSH tunnel forwards the remote port to `127.0.0.1:52140`, all client tools interact
 with `lokal` as if it were running locally on your workstation.
 
-### Agent-Control
-In Agent-Control settings:
+### DONWI Desk
+In DONWI Desk settings:
 - **Base URL:** `http://127.0.0.1:52140/v1`
 - **API Key:** `<remote-bearer-token>`
 - **Model:** `chat` (or `code`)
 
-Because `127.0.0.1` is loopback, Agent-Control treats it as a local provider and does not require
+Because `127.0.0.1` is loopback, DONWI Desk treats it as a local provider and does not require
 external egress permissions.
 
 ### Claude Code Compatible Tools / OpenAI SDKs

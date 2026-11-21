@@ -56,7 +56,7 @@ Manages Agent Skills adhering to the open Agent Skills specification:
 - `validate <path> [--json]`: validates `SKILL.md` frontmatter and body format.
 - `promote <candidate>`: moves evaluated candidate from `candidates/` to `skills/`.
 - `rollback <name>`: restores previous backup version from `.history/`.
-- `export <name> [--out <dir>]`: exports skill in portable Agent-Skills layout.
+- `export <name> [--out <dir>]`: exports skill in portable DONWI Skills layout.
 
 ### 1.10 `lokal mcp`
 Starts the stdio Model Context Protocol (MCP) server. Exposes read-only tools and project resources.
@@ -71,7 +71,7 @@ Locates symbol definitions and references across Go, Python, TypeScript, JavaScr
 Manages recorded session logs and conversation histories:
 - `ls [--json]`: summarizes sessions, turn counts, models used, and token metrics.
 - `show <session-id> [--json]`: displays turn details, messages, and tool invocations.
-- `import <file> [--session <id>]`: imports Agent-Control JSON or Claude Code JSONL logs.
+- `import <file> [--session <id>]`: imports DONWI Desk JSON or Claude Code JSONL logs.
 
 ### 1.14 `lokal eval <task-spec.yaml> [--json] [--model <name>]`
 Executes declarative evaluation tasks in bounded, throwaway temporary sandboxes.

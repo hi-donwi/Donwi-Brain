@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <title>Agent Brain management</title>
+  <title>DONWI Brain management</title>
   <link rel="stylesheet" href="/manage-ui/style.css">
   <script src="/manage-ui/app.js" defer></script>
 </head>
@@ -13,13 +13,13 @@
     <header>
       <p class="eyebrow">AGENT BRAIN · OPERATOR CONSOLE</p>
       <h1>Provider and routing control</h1>
-      <p class="lead">Account credentials are sent to this Brain service and stored by Brain. They are never returned to Agent Control.</p>
+      <p class="lead">Account credentials are sent to this Brain service and stored by Brain. They are never returned to DONWI Desk.</p>
     </header>
 
     <form id="connect-form" class="panel connect-form">
       <label for="management-token">Brain management credential</label>
       <input id="management-token" type="password" autocomplete="current-password" spellcheck="false" required>
-      <p class="hint">Create it on this Brain host with <code>brain router management-credential</code>, then transfer it from the owner-only file to this Brain-origin page. Never paste it into Agent Control. It is kept only in this page session.</p>
+      <p class="hint">Create it on this Brain host with <code>brain router management-credential</code>, then transfer it from the owner-only file to this Brain-origin page. Never paste it into DONWI Desk. It is kept only in this page session.</p>
       <div class="actions">
         <button class="primary" type="submit">Connect to Brain</button>
         <button id="disconnect" type="button" class="secondary" hidden>Disconnect</button>

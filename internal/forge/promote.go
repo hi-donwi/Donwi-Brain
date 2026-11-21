@@ -256,7 +256,7 @@ func (p *Promoter) Rollback(skillName string) (string, error) {
 	return latestBackup, nil
 }
 
-// Export packages a skill into a standalone directory formatted for Agent-Skills repository.
+// Export packages a skill into a standalone directory formatted for DONWI Skills repository.
 func (p *Promoter) Export(skillName, outDir string) (string, error) {
 	if !validCandidateName(skillName) {
 		return "", ErrInvalidCandidate

@@ -46,13 +46,13 @@ Use canonical references such as `openai/work`. Short names are accepted only
 when unambiguous. Existing account IDs remain valid. Repeated provider/name
 creation fails, and names cannot contain filesystem traversal components.
 
-## Agent-Control management console
+## DONWI Desk management console
 
-Agent-Control Settings embeds the Brain-origin `/manage-ui/` console for configured
-Agent Brain endpoints. Issue the separate management credential on the Brain host:
+DONWI Desk Settings embeds the Brain-origin `/manage-ui/` console for configured
+DONWI Brain endpoints. Issue the separate management credential on the Brain host:
 `brain router management-credential` writes an owner-only file and does not print
 the value. Transfer it directly to the Brain-origin page; do not enter it into
-Agent-Control. The gateway master token, profile inference tokens, and account-scoped
+DONWI Desk. The gateway master token, profile inference tokens, and account-scoped
 tokens are not accepted for management.
 
 The console can add API-key/no-auth accounts, prepare isolated managed OAuth
@@ -68,7 +68,7 @@ Provider credentials are typed only in the Brain-origin console and stored by
 Brain; they are write-only in the API. Remove account binding does not revoke the
 upstream provider credential. Changes are persisted atomically, and a running
 gateway must be restarted before it uses changed accounts or routing. Profile
-revisions must also be updated in the matching Agent-Control project egress policy.
+revisions must also be updated in the matching DONWI Desk project egress policy.
 
 ## Native CLI connections
 
@@ -242,7 +242,7 @@ native Google sign-in profiles in `agy` remain unverified and are not advertised
 
 ## Routing and storage
 
-### Agent-Control routing profiles
+### DONWI Desk routing profiles
 
 `accounts.yaml` may include an explicit profile-to-target allowlist. Each caller-visible
 model ID maps to exactly one provider/upstream model and a complete set of candidate account
@@ -278,7 +278,7 @@ brain router credential agent-control --protocol chat
 ```
 
 The CLI writes `~/.lokal/agent-control.token` with mode `0600` and a non-secret companion
-`~/.lokal/agent-control.token.json` containing the profile ID/revision for Agent-Control's
+`~/.lokal/agent-control.token.json` containing the profile ID/revision for DONWI Desk's
 local endpoint discovery. Both files must be new; the command never overwrites credentials.
 The issued HMAC credential is scoped to the selected profile revision and protocol set. It
 cannot read `/v1/accounts` or another profile's model list. Rotating `serve.token`, changing

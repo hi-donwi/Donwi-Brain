@@ -174,7 +174,7 @@ to ~/.lokal/serve.token with mode 0600.`,
 				return fmt.Errorf("configure gateway server: %w", err)
 			}
 
-			fmt.Fprintf(cmd.OutOrStdout(), "Agent-Brain gateway starting on http://%s\n", addr)
+			fmt.Fprintf(cmd.OutOrStdout(), "DONWI Brain gateway starting on http://%s\n", addr)
 			fmt.Fprintf(cmd.OutOrStdout(), "Bearer token:    stored privately in %s\n", layout.Token)
 			fmt.Fprintf(cmd.OutOrStdout(), "OpenAI endpoint: http://%s/v1\n", addr)
 			fmt.Fprintf(cmd.OutOrStdout(), "Responses route: http://%s/v1/responses\n", addr)

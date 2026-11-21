@@ -14,7 +14,7 @@ import (
 	"github.com/google/uuid"
 )
 
-// AgentControlTurn represents one turn in an Agent-Control session log.
+// AgentControlTurn represents one turn in a DONWI Desk session log.
 type AgentControlTurn struct {
 	TurnID       string         `json:"turnId,omitempty"`
 	Model        string         `json:"model,omitempty"`
@@ -30,14 +30,14 @@ type AgentControlTurn struct {
 	Metadata     map[string]any `json:"metadata,omitempty"`
 }
 
-// AgentControlSession represents an exported Agent-Control session log file.
+// AgentControlSession represents an exported DONWI Desk session log file.
 type AgentControlSession struct {
 	SessionID string             `json:"sessionId"`
 	CreatedAt string             `json:"createdAt,omitempty"`
 	Turns     []AgentControlTurn `json:"turns"`
 }
 
-// ImportAgentControlLog parses an Agent-Control JSON session log.
+// ImportAgentControlLog parses a DONWI Desk JSON session log.
 func ImportAgentControlLog(data []byte, defaultSessionID string) ([]Record, error) {
 	var session AgentControlSession
 	if err := json.Unmarshal(data, &session); err != nil {
@@ -186,7 +186,7 @@ func ImportLogFile(store *Store, filePath string, sessionID string) (int, error)
 			return 0, fmt.Errorf("import JSONL transcript: %w", err)
 		}
 	} else {
-		// Attempt Agent-Control JSON import
+		// Attempt DONWI Desk JSON import
 		records, err = ImportAgentControlLog(data, sessionID)
 		if err != nil {
 			// Fallback: try parsing as JSONL

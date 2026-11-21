@@ -20,8 +20,8 @@ layout, and Linux hardware detection.
 | [M8](#m8-v10) | v1.0 | Distribution and stability | Planned |
 
 lokal is the local AI platform that agents use (ADR-0008). The agent loop itself, with
-code assistance, vibe coding, and multi-agent work, belongs to agent hosts: Agent-Control
-for Agent-Workspace users, and existing agents such as opencode, Aider, Continue, Cline,
+code assistance, vibe coding, and multi-agent work, belongs to agent hosts: DONWI Desk
+for DONWI Workspace users, and existing agents such as opencode, Aider, Continue, Cline,
 or Claude Code-compatible tools for everyone else.
 
 Where each capability lives:
@@ -34,9 +34,9 @@ Where each capability lives:
 | RAG over files | M3 | Calls it over MCP |
 | Skills (Agent Skills format) | M4 runtime, router, MCP | Loads and follows them |
 | Code knowledge: repo map, symbols, project instructions | M5, read-only over MCP | Uses it while coding |
-| Agent loop, tools, approvals, sessions | - | Agent-Control or an external agent |
-| Code assistant and vibe coding (edits, git, test loop) | M6 measures models for it | Agent-Control or an external agent |
-| Multi-agent orchestration | M2 keeps concurrent agents within memory | Agent-Control or an external agent |
+| Agent loop, tools, approvals, sessions | - | DONWI Desk or an external agent |
+| Code assistant and vibe coding (edits, git, test loop) | M6 measures models for it | DONWI Desk or an external agent |
+| Multi-agent orchestration | M2 keeps concurrent agents within memory | DONWI Desk or an external agent |
 | Traces and evaluation | M6 | Exports session logs |
 | Auto skills: learn, evaluate, harden, promote | M7 | Uses promoted skills |
 
@@ -71,7 +71,7 @@ Deliverables:
 - `lokal version` (`--json`), `cmd/` + `internal/` layout, cobra, Makefile.
 - CI: gofmt, `go mod tidy` check, vet, race tests on Linux and macOS with the two
   supported Go releases, static cross-compile for five platforms, govulncheck, the
-  Agent-Secure secret and dependency gate, one aggregate `CI OK` check.
+  DONWI Secure secret and dependency gate, one aggregate `CI OK` check.
 - ADR-0001 to ADR-0006.
 - Spike A: Ollama API surface (native and OpenAI-compatible). Result: silent prompt and
   embedding truncation, ignored `num_ctx` on `/v1`, thinking budget, working tools and
@@ -161,7 +161,7 @@ Deliverables:
   Host header check against DNS rebinding.
 - Adapters for llama.cpp `llama-server`, LM Studio, MLX-LM server, and vLLM, each
   passing the shared contract test suite against recorded fixtures.
-- Client snippets in `lokal doctor` for Agent-Control, Claude Code-compatible tools,
+- Client snippets in `lokal doctor` for DONWI Desk, Claude Code-compatible tools,
   opencode, Continue, and generic OpenAI SDKs.
 - `lokal service install|uninstall|status`: a systemd unit on Linux (launchd on macOS)
   so the gateway and its backend survive reboots on a dedicated VM, logging to the
@@ -176,7 +176,7 @@ Tests: contract suite per adapter; gateway tests with an in-process fake backend
 (streaming, tool calls, errors, cancellation); residency and queue tests against fake
 memory budgets; auth and Host header tests.
 
-Exit criteria: Agent-Control, running on another machine, uses `lokal serve` on a
+Exit criteria: DONWI Desk, running on another machine, uses `lokal serve` on a
 headless VM through a tunnel as a provider for chat and tool calls; two roles on
 different models serve interleaved requests on the tiny profile without a load that
 exceeds memory; every listed backend passes the contract suite.
@@ -226,15 +226,15 @@ Deliverables:
   `list_models`, built on the official Go MCP SDK (version pinned and verified at the
   start of M4). Every lokal MCP tool is read-only (ADR-0008).
 
-Tests: parser and validator against the Agent-Skills catalog; router fixtures (direct,
+Tests: parser and validator against the DONWI Skills catalog; router fixtures (direct,
 paraphrase, near-miss negative); MCP protocol tests through the SDK's in-memory transport.
 
-Exit criteria: the Agent-Skills catalog loads and validates; an MCP client (Claude Code)
+Exit criteria: the DONWI Skills catalog loads and validates; an MCP client (Claude Code)
 can search an indexed collection and fetch a skill through `lokal mcp`.
 
 ## M5: Code knowledge over MCP
 
-Goal: any agent working on a repository (Agent-Control, Claude Code, opencode, and
+Goal: any agent working on a repository (DONWI Desk, Claude Code, opencode, and
 others) can ask lokal what the code contains and how the project wants to be worked on,
 without lokal ever touching the repository (ADR-0008).
 
@@ -257,7 +257,7 @@ Tests: repo-map and symbol extraction against fixture repositories in several la
 budget tests (the map never exceeds the requested tokens); MCP protocol tests; a test that
 fails if any MCP tool opens a file for writing.
 
-Exit criteria: Claude Code, and Agent-Control once it has an MCP client, use `repo_map`,
+Exit criteria: Claude Code, and DONWI Desk once it has an MCP client, use `repo_map`,
 `find_symbol`, and `search_code` on a real repository through `lokal mcp`; the read-only
 test passes.
 
@@ -273,7 +273,7 @@ Deliverables:
   retrieval, tool output, MCP), with secrets redacted before writing (ADR-0006).
 - Gateway capture (opt-in per client or per role): requests and responses through
   `lokal serve` written as traces, grouped into conversations.
-- Importers for agent-host session logs, Agent-Control first (its replayable session
+- Importers for agent-host session logs, DONWI Desk first (its replayable session
   event log), so the forge sees full sessions, not only model traffic.
 - `lokal eval`: a minimal bounded runner (step, token, and time limits; native tool calls
   with a JSON-schema fallback) that executes task sets in throwaway directories only. It
@@ -286,11 +286,11 @@ Deliverables:
 
 Tests: trace schema round-trip and versioning; redaction tests that fail on a planted fake
 secret; capture tests through the gateway with a fake backend; importer tests on recorded
-Agent-Control session logs; eval-runner tests with a scripted fake backend, including a
+DONWI Desk session logs; eval-runner tests with a scripted fake backend, including a
 test that fails if the runner writes outside its throwaway directory.
 
 Exit criteria: on the target profile, the task sets produce a recorded pass rate per
-model; traces from gateway capture and from an imported Agent-Control session validate
+model; traces from gateway capture and from an imported DONWI Desk session validate
 against the format and carry content origin.
 
 ## M7: Skill forge
@@ -316,10 +316,10 @@ Deliverables:
   provenance flag for any external content.
 - `lokal skills promote|rollback|export`: promotion shows the skill, provenance, and
   evaluation; versions by content hash; export produces a folder ready to propose to
-  Agent-Skills, from which every agent host can load it.
+  DONWI Skills, from which every agent host can load it.
 - Decay report: promoted skills that stopped triggering or whose fixtures now fail.
 
-Prior art: `ws learn` in Agent-Workspace drafts a skill from recorded run decisions; the
+Prior art: `ws learn` in DONWI Workspace drafts a skill from recorded run decisions; the
 forge generalises this to agent traces and adds evaluation.
 
 Exit criteria: from a seeded set of traces, at least one candidate is drafted, evaluated,
@@ -343,7 +343,7 @@ Deliverables:
 - Linux GPU path verified (NVIDIA with vLLM or llama-server); Windows support decision
   recorded as an ADR.
 - Documentation per command, troubleshooting by doctor check ID, and a guide per agent
-  host (Agent-Control, Claude Code, opencode, Continue, Aider).
+  host (DONWI Desk, Claude Code, opencode, Continue, Aider).
 
 Exit criteria: a user installs with one command on macOS and Linux, `lokal setup` and
 `lokal doctor` are green on all three profiles, and the stable surfaces have tests that
@@ -356,7 +356,7 @@ pin them.
   multi-agent orchestration. Agent hosts own those (ADR-0008); `lokal eval` is a
   measuring tool only.
 - Writing to a user's repository or running commands in it.
-- A web UI (Agent-Control is the web console).
+- A web UI (DONWI Desk is the web console).
 - Fine-tuning or LoRA training.
 - Multi-user or networked server deployments.
 - Native Windows before the M8 decision.

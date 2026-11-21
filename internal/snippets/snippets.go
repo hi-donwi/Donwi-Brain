@@ -54,9 +54,9 @@ func All(p Params) []ClientSnippet {
 	}
 }
 
-// AgentControl returns configuration for Agent-Control.
+// AgentControl returns configuration for DONWI Desk.
 func AgentControl(p Params) ClientSnippet {
-	code := fmt.Sprintf(`// Agent-Control provider configuration
+	code := fmt.Sprintf(`// DONWI Desk provider configuration
 {
   "provider": "lokal",
   "baseURL": "%s",
@@ -69,8 +69,8 @@ func AgentControl(p Params) ClientSnippet {
 }`, p.BaseURL, p.Token, p.ChatModel, p.CodeModel, p.EmbedModel)
 	return ClientSnippet{
 		ID:          "agent-control",
-		Name:        "Agent-Control",
-		Description: "Configure Agent-Control to connect to lokal serve",
+		Name:        "DONWI Desk",
+		Description: "Configure DONWI Desk to connect to lokal serve",
 		Lang:        "json",
 		Code:        code,
 	}
