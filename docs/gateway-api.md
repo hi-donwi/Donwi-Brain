@@ -84,7 +84,7 @@ exposing the master token to its child. They cannot switch accounts through anot
 header or select a conflicting provider; the account must remain in the current
 configuration snapshot.
 
-For Agent-Control, `brain router credential <profile-id> --protocol chat` writes a
+For DONWI Desk, `brain router credential <profile-id> --protocol chat` writes a
 separate owner-only profile-scoped credential. The token's signature binds one profile
 ID, current `sha256` revision, and protocol set. Every inference or model-discovery call
 must also carry matching `X-Brain-Profile` and `X-Brain-Revision` headers. Profile tokens
@@ -101,11 +101,11 @@ to overwrite an existing file. The credential is accepted only for `/manage/v1/`
 routes and is denied on inference routes. Profile/account credentials are denied
 from management routes. Rotating the master token revokes the management credential.
 The operator transfers it from that private file directly into the embedded Brain-origin
-console through a trusted local channel; it is never entered into Agent-Control code or
-configuration, nor sent through the Agent-Control backend.
+console through a trusted local channel; it is never entered into DONWI Desk code or
+configuration, nor sent through the DONWI Desk backend.
 
 Management API requests with an `Origin` header must be same-origin; cross-origin
-browser API calls are refused. The Brain-origin console is embedded by Agent-Control
+browser API calls are refused. The Brain-origin console is embedded by DONWI Desk
 only from explicitly configured endpoints. Non-browser clients may omit `Origin`,
 but still require the management credential. Management responses are
 `no-store`; account credential values and references, bridge secrets, backend tokens,
@@ -121,7 +121,7 @@ must run in its official local CLI; Brain does not launch a native CLI process f
 request. Account/profile mutations persist validated configuration
 but do not reload a running gateway; account and profile changes become active
 after restart. Profile revisions must be copied into the matching workspace project
-egress policy before Agent-Control chat can use the new revision.
+egress policy before DONWI Desk chat can use the new revision.
 
 Local runtime management reports only the running adapter and configured backend
 origins/IDs; endpoint userinfo, paths, query values, and tokens are omitted. Backend

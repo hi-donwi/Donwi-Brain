@@ -28,7 +28,7 @@ func newTracesCmd(deps TracesDeps) *cobra.Command {
 		Use:   "traces",
 		Short: "Inspect, manage, and import agent session traces",
 		Long: `traces manages execution traces recorded by the gateway or imported from
-external agents (Agent-Control, Claude Code). Traces are stored in ~/.lokal/traces/
+external agents (DONWI Desk, Claude Code). Traces are stored in ~/.lokal/traces/
 as append-only JSONL files.`,
 	}
 
@@ -159,9 +159,9 @@ func newTracesImportCmd(deps TracesDeps) *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use:   "import <file>",
-		Short: "Import session logs from Agent-Control or Claude Code",
+		Short: "Import session logs from DONWI Desk or Claude Code",
 		Long: `import parses conversation logs and records them into ~/.lokal/traces/.
-Supports Agent-Control JSON logs and Claude Code JSONL transcripts.`,
+Supports DONWI Desk JSON logs and Claude Code JSONL transcripts.`,
 		Args: cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			filePath := args[0]

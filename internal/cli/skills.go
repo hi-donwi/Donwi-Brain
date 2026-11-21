@@ -410,7 +410,7 @@ func newSkillsExportCmd(deps SkillsDeps) *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use:   "export <skill-name>",
-		Short: "Export a skill formatted for Agent-Skills repository",
+		Short: "Export a skill formatted for DONWI Skills repository",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			skillName := args[0]

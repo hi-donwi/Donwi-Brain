@@ -1,6 +1,6 @@
 # Local OpenAI Compatibility
 
-Agent-Brain is an inference gateway, not an agent host. The client owns its system
+DONWI Brain is an inference gateway, not an agent host. The client owns its system
 prompt, tools, approvals, and agent loop. The gateway must not force a tool call,
 rewrite an answer into a model-identity response, or turn arbitrary output JSON into
 an executable tool invocation.

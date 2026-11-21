@@ -122,8 +122,8 @@ func TestDoctorSnippets(t *testing.T) {
 	if !strings.Contains(out, "Client Configuration Snippets") {
 		t.Errorf("expected header in output:\n%s", out)
 	}
-	if !strings.Contains(out, "Agent-Control") {
-		t.Errorf("expected Agent-Control in snippets output:\n%s", out)
+	if !strings.Contains(out, "DONWI Desk") {
+		t.Errorf("expected DONWI Desk in snippets output:\n%s", out)
 	}
 
 	outJSON, err := runDoctor(t, checksWith(doctor.OK), "--json", "--snippets")

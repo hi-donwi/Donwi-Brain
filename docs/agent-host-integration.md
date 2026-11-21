@@ -7,9 +7,9 @@ IDEs, not another agent (ADR-0008). It exposes two standard integration surfaces
 
 ---
 
-## 1. Agent-Control Integration
+## 1. DONWI Desk Integration
 
-Agent-Control connects to `lokal` as both an inference client and an MCP host.
+DONWI Desk connects to `lokal` as both an inference client and an MCP host.
 
 ### Gateway Connection:
 1. Start the gateway:
@@ -20,13 +20,13 @@ Agent-Control connects to `lokal` as both an inference client and an MCP host.
    ```bash
    TOKEN=$(cat ~/.lokal/serve.token)
    ```
-3. Configure Agent-Control endpoint:
+3. Configure DONWI Desk endpoint:
    - **Base URL:** `http://127.0.0.1:8080/v1`
    - **API Key:** `$TOKEN`
    - **Model:** `code` (or `chat`)
 
 ### MCP Integration:
-In Agent-Control MCP settings:
+In DONWI Desk MCP settings:
 ```json
 {
   "mcpServers": {
@@ -39,7 +39,7 @@ In Agent-Control MCP settings:
 ```
 
 ### Trace Export to Skill Forge:
-Export Agent-Control sessions for skill learning:
+Export DONWI Desk sessions for skill learning:
 ```bash
 lokal traces import /path/to/agent-control/session-123.json
 lokal forge mine

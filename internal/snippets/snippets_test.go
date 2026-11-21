@@ -59,8 +59,8 @@ func TestSnippets_FormatText(t *testing.T) {
 	all := snippets.All(p)
 	formatted := snippets.FormatText(all)
 
-	if !strings.Contains(formatted, "[Agent-Control]") {
-		t.Errorf("expected [Agent-Control] in formatted text")
+	if !strings.Contains(formatted, "[DONWI Desk]") {
+		t.Errorf("expected [DONWI Desk] in formatted text")
 	}
 	if !strings.Contains(formatted, "[OpenAI Python SDK]") {
 		t.Errorf("expected [OpenAI Python SDK] in formatted text")
