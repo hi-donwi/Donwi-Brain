@@ -11,6 +11,10 @@ import (
 	"github.com/hi-donwi/Donwi-Brain/internal/router"
 )
 
+const managementUIFrameAncestors = "'self' " +
+	"http://127.0.0.1:3141 http://localhost:3141 http://127.0.0.1:5173 http://localhost:5173 " +
+	"tauri://localhost http://tauri.localhost"
+
 //go:embed management-ui/*
 var managementUI embed.FS
 
@@ -385,7 +389,7 @@ func (s *Server) handleManagementUI(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Cache-Control", "no-store")
 	w.Header().Set("X-Content-Type-Options", "nosniff")
 	w.Header().Set("Referrer-Policy", "no-referrer")
-	w.Header().Set("Content-Security-Policy", "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'none'; frame-ancestors 'self' http://127.0.0.1:3141 http://localhost:3141 http://127.0.0.1:5173 http://localhost:5173 tauri://localhost")
+	w.Header().Set("Content-Security-Policy", "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'none'; frame-ancestors "+managementUIFrameAncestors)
 	w.WriteHeader(http.StatusOK)
 	_, _ = w.Write(content)
 }

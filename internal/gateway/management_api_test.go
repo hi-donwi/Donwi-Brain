@@ -216,8 +216,14 @@ func TestManagementConsoleIsBrainOriginAndDoesNotRequireDataCredentialsToLoad(t 
 	if w.Code != http.StatusOK || !strings.Contains(w.Body.String(), "Brain management credential") || !strings.Contains(w.Body.String(), "Backends and models") || !strings.Contains(w.Body.String(), "Brain background service") || !strings.Contains(w.Body.String(), "Registered RAG sources") || !strings.Contains(w.Body.String(), "Install a Brain-user skill") || !strings.Contains(w.Body.String(), "Trace summaries and local evaluation") || !strings.Contains(w.Body.String(), "Candidate gates") {
 		t.Fatalf("console did not load without an API credential: status=%d", w.Code)
 	}
-	if w.Header().Get("Cache-Control") != "no-store" || !strings.Contains(w.Header().Get("Content-Security-Policy"), "frame-ancestors") {
+	policy := w.Header().Get("Content-Security-Policy")
+	if w.Header().Get("Cache-Control") != "no-store" || !strings.Contains(policy, "frame-ancestors") {
 		t.Fatalf("console security headers missing: %v", w.Header())
+	}
+	for _, origin := range []string{"tauri://localhost", "http://tauri.localhost"} {
+		if !strings.Contains(policy, origin) {
+			t.Errorf("console frame policy does not allow desktop origin %q: %s", origin, policy)
+		}
 	}
 
 	r = httptest.NewRequest(http.MethodGet, "http://127.0.0.1/manage-ui/app.js", nil)
